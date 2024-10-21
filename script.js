@@ -33,16 +33,7 @@ function deleteCard(button) {
     cardContainer.removeChild(card);
 }
 
-// Search functionality
-// searchInput.addEventListener('input', (e) => {
-//     const msg = "not found";
-//     const query = e.target.value.toLowerCase();
-//     const cards = cardContainer.children;
-//     Array.from(cards).forEach(card => {
-//         const title = card.querySelector('h2').textContent.toLowerCase();
-//         card.style.display = title.includes(query) ? 'block' : `${msg}`;
-//     });
-// });
+
 
 searchInput.addEventListener('input', (e) => {
 
