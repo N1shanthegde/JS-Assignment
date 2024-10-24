@@ -1,7 +1,6 @@
 const card = document.querySelector("#cardContainer");
 const searchInput = document.querySelector(".search-input");
-const languageFilter = document.querySelector("#languageFilter");
-const ratingFilter = document.querySelector(".rating-filter");
+const languageFilter = document.querySelector("#languageFilter"); 
 
 const languages = ['English', 'Kannada', 'Hindi', 'Telugu', 'Tamil', 'Malayalam'];
 
@@ -11,17 +10,47 @@ async function fetchData() {
     renderCards(data);
 }
 
+// function renderCards(data) {
+//     card.innerHTML = '';
+//     data.forEach(item => {
+//         const cardBody = document.createElement('div');
+//         cardBody.classList.add('card1');
+//         cardBody.innerHTML = `
+//             <h2>${item.title}</h2>
+//             <p>Likes: ${Math.floor(Math.random() * 1000) + 1}</p>
+//             <p>Language: ${languages[Math.floor(Math.random() * languages.length)]}</p>
+//             <button onclick="deleteCard(this)">Delete</button>
+//         `;
+//         card.appendChild(cardBody);
+//     });
+// }
+
 function renderCards(data) {
-    card.innerHTML = '';
-    data.forEach(item => {
+    card.innerHTML='';
+    data.forEach((item) => {
         const cardBody = document.createElement('div');
         cardBody.classList.add('card1');
-        cardBody.innerHTML = `
-            <h2>${item.title}</h2>
-            <p>Likes: ${Math.floor(Math.random() * 1000) + 1}</p>
-            <p>Language: ${languages[Math.floor(Math.random() * languages.length)]}</p>
-            <button onclick="deleteCard(this)">Delete</button>
-        `;
+
+        const h2 = document.createElement('h2');
+        h2.classList.add('h2');
+        h2.textContent = item.title;
+
+        const likes = document.createElement('p');
+        likes.classList.add('likes');
+        likes.textContent = 'likes: '+ Math.floor(Math.random() * 100) + 1;
+
+        const language = document.createElement('p');
+        language.classList.add('language');
+        language.textContent = 'languages: '+languages[Math.floor(Math.random() * languages.length)];
+
+        const btn = document.createElement('button');
+        btn.textContent = 'Delete';
+
+        cardBody.appendChild(h2);
+        cardBody.appendChild(likes);
+        cardBody.appendChild(language);
+        cardBody.appendChild(btn);
+
         card.appendChild(cardBody);
     });
 }
