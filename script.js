@@ -10,20 +10,6 @@ async function fetchData() {
     renderCards(data);
 }
 
-// function renderCards(data) {
-//     card.innerHTML = '';
-//     data.forEach(item => {
-//         const cardBody = document.createElement('div');
-//         cardBody.classList.add('card1');
-//         cardBody.innerHTML = `
-//             <h2>${item.title}</h2>
-//             <p>Likes: ${Math.floor(Math.random() * 1000) + 1}</p>
-//             <p>Language: ${languages[Math.floor(Math.random() * languages.length)]}</p>
-//             <button onclick="deleteCard(this)">Delete</button>
-//         `;
-//         card.appendChild(cardBody);
-//     });
-// }
 
 function renderCards(data) {
     card.innerHTML='';
