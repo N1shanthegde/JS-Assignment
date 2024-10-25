@@ -16,6 +16,7 @@ function renderCards(data) {
     data.forEach((item) => {
         const cardBody = document.createElement('div');
         cardBody.classList.add('card1');
+        
 
         const h2 = document.createElement('h2');
         h2.classList.add('h2');
