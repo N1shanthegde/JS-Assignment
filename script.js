@@ -1,6 +1,6 @@
 const card = document.querySelector("#cardContainer");
 const searchInput = document.querySelector(".search-input");
-const languageFilter = document.querySelector("#languageFilter"); 
+const languageFilter = document.querySelector("#languageFilter");
 
 const languages = ['English', 'Kannada', 'Hindi', 'Telugu', 'Tamil', 'Malayalam'];
 
@@ -32,6 +32,12 @@ function renderCards(data) {
         const btn = document.createElement('button');
         btn.textContent = 'Delete';
 
+        // btn.onclick = deleteCard(this);
+
+        btn.onclick = function(button) {
+            cardBody.remove(); // Removes the specific card
+        };
+
         cardBody.appendChild(h2);
         cardBody.appendChild(likes);
         cardBody.appendChild(language);
@@ -43,10 +49,10 @@ function renderCards(data) {
 
 
 // Delete card function
-function deleteCard(button) {
-    const card = button.parentElement;
-    cardContainer.removeChild(card);
-}
+// function deleteCard(button) {
+//     const card = button.parentElement;
+//     cardContainer.removeChild(card);
+// }
 
 
 
