@@ -20,7 +20,10 @@ function renderCards(data) {
 
         const h2 = document.createElement('h2');
         h2.classList.add('h2');
-        h2.textContent = item.title;
+        // h2.textContent = item.title;
+
+        const sliceTitle = item.title.length > 40 ? item.title.slice(0, 50)+"...." : item.title;
+        h2.textContent = sliceTitle;
 
         const likes = document.createElement('p');
         likes.classList.add('likes');
@@ -33,7 +36,6 @@ function renderCards(data) {
         const btn = document.createElement('button');
         btn.textContent = 'Delete';
 
-        // btn.onclick = deleteCard(this);
 
         btn.onclick = function(button) {
             cardBody.remove(); // Removes the specific card
@@ -47,13 +49,6 @@ function renderCards(data) {
         card.appendChild(cardBody);
     });
 }
-
-
-// Delete card function
-// function deleteCard(button) {
-//     const card = button.parentElement;
-//     cardContainer.removeChild(card);
-// }
 
 
 
